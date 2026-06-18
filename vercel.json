@@ -1,6 +1,5 @@
 {
   "buildCommand": "npm install && npm run build",
   "outputDirectory": ".next",
-  "installCommand": "npm install",
-  "rootDirectory": "dental-chatbot"
+  "installCommand": "npm install"
 }
