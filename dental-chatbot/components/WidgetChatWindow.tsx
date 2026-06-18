@@ -7,6 +7,7 @@ interface WidgetChatWindowProps {
   messages: ChatMessage[];
   isLoading: boolean;
   onSendMessage: (message: string) => void;
+  onClose: () => void;
   clinicName: string;
   primaryColor?: string;
 }
@@ -15,6 +16,7 @@ export const WidgetChatWindow = ({
   messages,
   isLoading,
   onSendMessage,
+  onClose,
   clinicName,
   primaryColor = '#0284c7',
 }: WidgetChatWindowProps) => {
@@ -59,6 +61,25 @@ export const WidgetChatWindow = ({
           <h2 className="font-bold text-lg">{clinicName}</h2>
           <p className="text-sm opacity-90">AI Assistant</p>
         </div>
+        <button
+          onClick={onClose}
+          className="text-white hover:opacity-80 transition"
+          aria-label="Close chat"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
       </div>
 
       {/* Messages Area */}
@@ -131,7 +152,6 @@ export const WidgetChatWindow = ({
             placeholder="Type your message..."
             disabled={isLoading}
             className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 disabled:bg-gray-100"
-            style={{ focusBorderColor: primaryColor }}
           />
           <button
             onClick={handleSendMessage}

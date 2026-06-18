@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { ChatMessage, generateBotResponse } from '@/lib/chatbotAI';
+import { useState } from 'react';
+import { ChatMessage } from '@/lib/chatbotAI';
 import { WidgetChatWindow } from './WidgetChatWindow';
 import { WidgetChatButton } from './WidgetChatButton';
 import { ClinicData } from '@/data/clinicData';
@@ -98,6 +98,7 @@ export const WidgetChatbot = ({ clinicData, clientId }: WidgetChatbotProps) => {
           messages={messages}
           isLoading={isLoading}
           onSendMessage={handleSendMessage}
+          onClose={handleCloseChat}
           clinicName={clinicData.name}
           primaryColor={primaryColor}
         />

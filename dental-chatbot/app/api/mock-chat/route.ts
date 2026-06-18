@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     const clinicData = getClinicData(clientId);
 
     // Generate bot response using clinic-specific data
-    const response = generateBotResponse(message, clinicData);
+    const response = generateBotResponse(message);
 
     // Simulate network delay
     await new Promise((resolve) =>

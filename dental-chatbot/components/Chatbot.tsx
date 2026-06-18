@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { ChatMessage, generateBotResponse, simulateBotResponse } from '@/lib/chatbotAI';
+import { ChatMessage, simulateBotResponse } from '@/lib/chatbotAI';
 import { ChatWindow } from './ChatWindow';
 import { ChatButton } from './ChatButton';
 
