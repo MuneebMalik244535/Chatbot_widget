@@ -60,6 +60,11 @@ export const Chatbot = () => {
     setIsOpen(true);
     setUnreadCount(0);
 
+    // Notify parent window to resize iframe
+    if (typeof window !== 'undefined' && window.parent) {
+      window.parent.postMessage('chat-open', '*');
+    }
+
     // Show greeting if first time opening
     if (messages.length === 0) {
       const greetingMsg: ChatMessage = {
@@ -74,6 +79,11 @@ export const Chatbot = () => {
 
   const handleCloseChat = () => {
     setIsOpen(false);
+    
+    // Notify parent window to resize iframe
+    if (typeof window !== 'undefined' && window.parent) {
+      window.parent.postMessage('chat-close', '*');
+    }
   };
 
   return (
