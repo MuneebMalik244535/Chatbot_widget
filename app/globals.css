@@ -32,11 +32,7 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  <<<<<<< HEAD background-color: transparent;
-  color: #1f2937;
-  =======overflow-x: hidden;
-  /* prevents horizontal white gap */
-  >>>>>>>493991ade5907c5c820a93038af89ee049400cca
+  overflow-x: hidden; /* prevents horizontal white gap */
 }
 
 /* Smooth scrollbar (only for scroll areas) */
